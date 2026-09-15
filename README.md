@@ -211,15 +211,6 @@ Standard skill installations dump 35,000+ tokens into every LLM interaction. Arc
 │ Immutable epistemic invariants anchored at the top for 90% cache discounts  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
-
-### Cost & Context Economics Benchmark
-
-| Model | Monolithic Injection (35k tokens) | Archon 5-Layer (~1.9k tokens) | Savings / 100 Turns | Monthly Savings (200 turns/day) |
-|---|---|---|---|---|
-| **Claude 3.5 Sonnet** | $11.10 / 100 turns | **$0.57 / 100 turns** | **-$10.53 (94.8%)** | **Save $631 / month** |
-| **GPT-4o** | $9.25 / 100 turns | **$0.48 / 100 turns** | **-$8.77 (94.8%)** | **Save $526 / month** |
-| **Gemini 1.5 Pro** | $4.37 / 100 turns | **$0.24 / 100 turns** | **-$4.13 (94.5%)** | **Save $248 / month** |
-
 ---
 
 ## Dual-Scope Institutional Memory
