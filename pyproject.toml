@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archon-skills"
+version = "0.1.0"
+description = "Universal Expert Skill Suite, Epistemic Rigor & Dual-Scope Memory Engine across AI Coding Agents"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Archon Contributors" }
+]
+keywords = [
+    "ai-agents",
+    "coding-agents",
+    "skills",
+    "architecture",
+    "security",
+    "memory",
+    "antigravity",
+    "cursor",
+    "claude-code",
+    "windsurf",
+    "copilot",
+    "cline",
+    "aider"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/archon-ai/archon-skills"
+Repository = "https://github.com/archon-ai/archon-skills"
+Issues = "https://github.com/archon-ai/archon-skills/issues"
+
+[project.scripts]
+archon = "archon.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["archon*", "adapters*"]

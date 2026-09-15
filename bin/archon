@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+# Archon Unix CLI executable launcher
+# 100% zero-dependency Standard Library implementation
+
+# Resolve repository root
+PRG="$0"
+while [ -h "$PRG" ]; do
+    ls=`ls -ld "$PRG"`
+    link=`expr "$ls" : '.*-> \(.*\)$'`
+    if expr "$link" : '/.*' > /dev/null; then
+        PRG="$link"
+    else
+        PRG=`dirname "$PRG"`"/$link"
+    fi
+done
+ARCHON_BIN_DIR=`dirname "$PRG"`
+ARCHON_ROOT=`cd "$ARCHON_BIN_DIR/.." >/dev/null 2>&1 && pwd`
+
+PYTHON=""
+if command -v python3 >/dev/null 2>&1; then
+    PYTHON="python3"
+elif command -v python >/dev/null 2>&1; then
+    PYTHON="python"
+else
+    echo "Error: Python 3 is required to run Archon but was not found on PATH." >&2
+    exit 1
+fi
+
+export PYTHONPATH="$ARCHON_ROOT${PYTHONPATH:+:$PYTHONPATH}"
+exec "$PYTHON" -m archon.cli "$@"

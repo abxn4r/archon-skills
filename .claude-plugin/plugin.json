@@ -1,0 +1,42 @@
+{
+  "name": "archon-skills",
+  "version": "0.1.0",
+  "description": "Archon Universal Expert Skill Suite & Epistemic Memory Engine",
+  "skills": [
+    {
+      "name": "aperture",
+      "description": "ALWAYS invoke when the user mentions Aperture (e.g., 'Aperture', 'ask Aperture', 'run Aperture', 'consult Aperture') or requests design/UX review. Design & UX Director reviewing interfaces, products, dashboards, landing pages, visual hierarchy, spacing, interaction design, usability, design systems, and production readiness (Linear/Stripe/Vercel standard).",
+      "path": ".claude/skills/aperture/SKILL.md"
+    },
+    {
+      "name": "caples",
+      "description": "ALWAYS invoke when the user mentions Caples (e.g., 'Caples', 'ask Caples', 'run Caples', 'consult Caples') or asks for copy/messaging review. Principal Copy & Messaging Director evaluating value propositions, headlines, CTAs, landing pages, SaaS messaging, pricing copy, positioning clarity, conversion optimization, and reader persuasion.",
+      "path": ".claude/skills/caples/SKILL.md"
+    },
+    {
+      "name": "council",
+      "description": "Autonomous Multi-Advisor Consensus Council orchestrating Seneca (Strategy), Dijkstra (Architecture), Saltzer (Security & Release Veto), Aperture (UI/UX), Caples (Copy), and Orwell (Growth) on high-stakes decisions, migrations, and architecture changes. Produces a unified Consensus & Disagreements Matrix.",
+      "path": ".claude/skills/council/SKILL.md"
+    },
+    {
+      "name": "dijkstra",
+      "description": "ALWAYS invoke when the user mentions Dijkstra (e.g., 'Dijkstra', 'ask Dijkstra', 'run Dijkstra', 'consult Dijkstra') or asks for engineering architecture review. Engineering Architect & Principal Engineer evaluating system architecture, codebase health, PRs, technical debt, scalability, refactoring, code quality, and engineering decisions across thousands of commits.",
+      "path": ".claude/skills/dijkstra/SKILL.md"
+    },
+    {
+      "name": "orwell",
+      "description": "ALWAYS invoke when the user mentions Orwell (e.g., 'Orwell', 'ask Orwell', 'run Orwell', 'consult Orwell') or asks for growth/content strategy. Growth Strategist & Content Director building long-term reputation and audience quality across X, LinkedIn, Reddit, Hacker News, reviewing posts, scoring ideas, and maintaining a compounding content playbook.",
+      "path": ".claude/skills/orwell/SKILL.md"
+    },
+    {
+      "name": "saltzer",
+      "description": "ALWAYS invoke when the user mentions Saltzer (e.g., 'Saltzer', 'ask Saltzer', 'run Saltzer', 'consult Saltzer') or asks for security review. Principal Application Security Engineer with release veto authority (Critical finding = DO NOT SHIP). Reviews auth/authz, secrets, APIs, dependencies, infrastructure, and AI/LLM/MCP attack surfaces.",
+      "path": ".claude/skills/saltzer/SKILL.md"
+    },
+    {
+      "name": "seneca",
+      "description": "ALWAYS invoke when the user mentions Seneca (e.g., 'Seneca', 'ask Seneca', 'run Seneca', 'consult Seneca') or seeks a strategic advisor and second brain. Long-term thinking partner for high-stakes/irreversible decisions, accountability, personal growth, trade-offs, priorities, and behavioral analysis.",
+      "path": ".claude/skills/seneca/SKILL.md"
+    }
+  ]
+}

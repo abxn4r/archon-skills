@@ -1,0 +1,25 @@
+name: "Archon Saltzer Security Veto Gate"
+description: "Empirical PR security auditor with Release Veto authority"
+author: "Archon Contributors"
+inputs:
+  mcp-config:
+    description: "Path to MCP JSON config file to audit"
+    required: false
+    default: ""
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Run Saltzer MCP Auditor
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.mcp-config }}" ]; then
+          python skills/saltzer/scripts/audit_mcp_config.py --file "${{ inputs.mcp-config }}"
+        else
+          python skills/saltzer/scripts/audit_mcp_config.py --test
+        fi

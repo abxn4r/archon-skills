@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrwellContentPlaybookTuple",
+  "description": "8-node relational tuple schema for organic content experiments and playbooks",
+  "type": "object",
+  "required": [
+    "topic",
+    "audience",
+    "hook_type",
+    "format",
+    "platform",
+    "community",
+    "outcome",
+    "confidence"
+  ],
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "Core subject, thesis, or engineering decision discussed"
+    },
+    "audience": {
+      "type": "string",
+      "description": "Specific demographic or technical cohort targeted"
+    },
+    "hook_type": {
+      "type": "string",
+      "enum": [
+        "contrarian_post_mortem",
+        "vulnerability_to_framework",
+        "system_architecture_blueprint",
+        "extreme_constraint_experiment",
+        "before_vs_after_metric",
+        "micro_tutorial_teardown"
+      ],
+      "description": "Classification of the opening narrative mechanism"
+    },
+    "format": {
+      "type": "string",
+      "description": "Visual or text structure (e.g. Single Post, Thread, Document Carousel, Case Study)"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "X (Twitter)",
+        "LinkedIn",
+        "Reddit",
+        "Hacker News",
+        "Substack",
+        "GitHub Discussions"
+      ],
+      "description": "Primary distribution channel"
+    },
+    "community": {
+      "type": "string",
+      "description": "Specific subreddit, topic tag, or technical group"
+    },
+    "outcome": {
+      "type": "string",
+      "description": "Observed quantitative or qualitative result (bookmarks, inbound, discussions)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Advisor confidence score in reproducibility"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Qualitative commentary or countermove recommendations"
+    }
+  }
+}

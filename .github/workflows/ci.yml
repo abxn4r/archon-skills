@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }} on ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify zero external runtime dependencies
+        run: |
+          python -c "import archon; print(f'Archon v{archon.__version__} loaded cleanly with zero pip dependencies.')"
+
+      - name: Run test suite
+        run: |
+          python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Run empirical script self-tests
+        run: |
+          python skills/dijkstra/scripts/verify_evidence_quotes.py --test
+          python skills/saltzer/scripts/audit_mcp_config.py --test
+          python skills/aperture/scripts/check_contrast.py --preset linear
+          python skills/caples/scripts/analyze_copy.py --text "A test of clear, specific copy."
+
+      - name: Validate skill specification & 500-line budget
+        run: |
+          python -m archon.cli validate ./skills

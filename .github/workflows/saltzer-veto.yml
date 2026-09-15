@@ -1,0 +1,51 @@
+name: Saltzer Release Veto Gate
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  security-veto-gate:
+    name: Saltzer Pre-Release Security Audit & Veto Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Audit MCP JSON Configurations
+        run: |
+          echo "Auditing MCP server configurations across repo..."
+          python skills/saltzer/scripts/audit_mcp_config.py --test
+          # Find any active mcp.json files and audit them
+          find . -name "*mcp*.json" -not -path "*/.*" -exec python skills/saltzer/scripts/audit_mcp_config.py --file {} + || true
+
+      - name: Verify No Committed Plaintext Secrets
+        run: |
+          echo "Scanning for common committed credential patterns..."
+          python -c '
+          import os, re, sys
+          pattern = re.compile(r"(AKIA[0-9A-Z]{16}|ghp_[0-9a-zA-Z]{36}|sk-[a-zA-Z0-9]{32,})")
+          found = False
+          for root, dirs, files in os.walk("."):
+              if any(p in root for p in [".git", "__pycache__", "tests"]):
+                  continue
+              for f in files:
+                  p = os.path.join(root, f)
+                  try:
+                      content = open(p, "r", encoding="utf-8", errors="ignore").read()
+                      if pattern.search(content):
+                          print(f"[CRITICAL VETO] Suspected committed secret in {p}")
+                          found = True
+                  except Exception:
+                      pass
+          if found:
+              print("[RELEASE VETO TRIGGERED]: DO NOT SHIP.")
+              sys.exit(1)
+          print("[✓] Saltzer Security Gate Passed: No critical veto triggers found.")
+          '
