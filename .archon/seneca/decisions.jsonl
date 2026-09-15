@@ -4,3 +4,4 @@
 {"id": "sen_4537a435", "timestamp": "2026-09-15T13:07:41.927348+00:00", "advisor": "seneca", "type": "decision", "tags": ["cli", "strategy"], "data": {"content": "Decided to ship CLI first"}}
 {"id": "sen_ca28fe2d", "timestamp": "2026-09-15T13:08:41.956830+00:00", "advisor": "seneca", "type": "decision", "tags": ["cli", "strategy"], "data": {"content": "Decided to ship CLI first"}}
 {"id": "sen_a20f4ead", "timestamp": "2026-09-15T13:17:32.901087+00:00", "advisor": "seneca", "type": "decision", "tags": ["cli", "strategy"], "data": {"content": "Decided to ship CLI first"}}
+{"id": "sen_651e3270", "timestamp": "2026-09-15T13:48:59.769258+00:00", "advisor": "seneca", "type": "decision", "tags": ["cli", "strategy"], "data": {"content": "Decided to ship CLI first"}}
