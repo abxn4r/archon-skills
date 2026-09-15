@@ -26,32 +26,40 @@
 
 ```mermaid
 graph TD
-    User([Developer / AI Agent Prompt]) --> Router{Archon Micro-Router}
+    User["Developer / AI Agent Prompt"] --> Router{"Archon Micro-Router"}
     
-    subgraph Specialist Disciplines
-        Router -->|Strategy & Trade-offs| Seneca[Seneca: Strategic Advisor]
-        Router -->|Architecture & Simplicity| Dijkstra[Dijkstra: Software Architect]
-        Router -->|Security & Release Veto| Saltzer[Saltzer: Security Engineer]
-        Router -->|UI/UX & Craft Standards| Aperture[Aperture: Design Director]
-        Router -->|Copywriting & Clarity| Caples[Caples: Messaging Director]
-        Router -->|Growth & Open Source| Orwell[Orwell: Growth Strategist]
+    subgraph Specialists ["Specialist Disciplines"]
+        Router -->|"Strategy"| Seneca["Seneca: Strategic Advisor"]
+        Router -->|"Architecture"| Dijkstra["Dijkstra: Software Architect"]
+        Router -->|"Security"| Saltzer["Saltzer: Security Engineer"]
+        Router -->|"UI/UX"| Aperture["Aperture: Design Director"]
+        Router -->|"Copywriting"| Caples["Caples: Messaging Director"]
+        Router -->|"Growth"| Orwell["Orwell: Growth Strategist"]
     end
 
-    subgraph High-Stakes Dilemmas
-        Seneca & Dijkstra & Saltzer & Aperture & Caples & Orwell --> Council[Archon Consensus Council]
-        Council --> Matrix[Consensus & Disagreements Matrix]
+    subgraph CouncilSub ["High-Stakes Dilemmas"]
+        Seneca --> Council["Archon Consensus Council"]
+        Dijkstra --> Council
+        Saltzer --> Council
+        Aperture --> Council
+        Caples --> Council
+        Orwell --> Council
+        Council --> Matrix["Consensus & Disagreements Matrix"]
     end
 
-    subgraph Zero-Token Deterministic Tools
-        Dijkstra --> QuoteVerifier[verify_evidence_quotes.py]
-        Saltzer --> MCPAuditor[audit_mcp_config.py]
-        Aperture --> ContrastCalc[check_contrast.py]
-        Caples --> CopyLinter[analyze_copy.py]
+    subgraph ToolsSub ["Zero-Token Deterministic Tools"]
+        Dijkstra --> QuoteVerifier["verify_evidence_quotes.py"]
+        Saltzer --> MCPAuditor["audit_mcp_config.py"]
+        Aperture --> ContrastCalc["check_contrast.py"]
+        Caples --> CopyLinter["analyze_copy.py"]
     end
 
-    subgraph Dual-Scope Institutional Memory
-        Specialist Disciplines <-->|Team ADRs & Security Debt| LocalScope[(.archon/ Repo Scope)]
-        Specialist Disciplines <-->|Founder Profile & Personal Growth| GlobalScope[(~/.archon/ User Scope)]
+    subgraph MemorySub ["Dual-Scope Institutional Memory"]
+        LocalScope[("Repo Scope (.archon/)")]
+        GlobalScope[("User Scope (~/.archon/)")]
+        Dijkstra -.->|"Team ADRs"| LocalScope
+        Saltzer -.->|"Security Debt"| LocalScope
+        Seneca -.->|"Founder Profile"| GlobalScope
     end
 ```
 
