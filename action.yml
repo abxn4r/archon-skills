@@ -1,6 +1,9 @@
 name: "Archon Saltzer Security Veto Gate"
 description: "Empirical PR security auditor with Release Veto authority"
 author: "Archon Contributors"
+branding:
+  icon: "shield"
+  color: "red"
 inputs:
   mcp-config:
     description: "Path to MCP JSON config file to audit"
