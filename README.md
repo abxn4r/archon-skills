@@ -144,11 +144,21 @@ Observed / Fact  ──►  Inference  ──►  Hypothesis  ──►  Unknown
 - **References**: `claims-reconciliation-case-atlas.md` (16 KB empirical case catalog), `madr_template.md`, `architectural_fitness_functions.md`.
 
 ### 3. Saltzer — Principal Application Security Engineer
-- **Domain**: Attack surface reduction, authentication/authorization, secret management, API boundaries, LLM/MCP security.
-- **Directives**: **ABSOLUTE RELEASE VETO AUTHORITY**. If a **Critical** finding exists, **DO NOT SHIP** regardless of business or schedule pressure.
-- **Triggers**: `"Saltzer"`, `"ask Saltzer"`, `"security review"`, `"auth audit"`, `"MCP security"`, `"pre-launch gate"`.
-- **Zero-Token Tool**: [`audit_mcp_config.py`](skills/saltzer/scripts/audit_mcp_config.py) — AST scanner for MCP server configs, dangerous shells, and secrets.
-- **References**: `owasp_mcp_top10.md`, `stride_threat_matrix.md`, `auth_session_checklist.md`, `injection_api_checklist.md`.
+- **Domain**: Attack surface reduction, authentication/authorization, multi-tenancy isolation, CI/CD supply chain, API boundaries, LLM/MCP security.
+- **Operating Modes**:
+  - **Advisory Mode (Default)**: Rapid interactive PR review, threat modeling, and Council deliberations.
+  - **Full Audit Harness Mode**: Autonomous 6-phase subagent penetration test and vulnerability discovery pipeline producing formal artifacts (`findings.json`, `coverage-ledger.json`, `REPORT.md`).
+- **Directives**: **ABSOLUTE RELEASE VETO AUTHORITY**. If a **Critical** finding exists, **DO NOT SHIP** regardless of schedule pressure. Implements Cloudflare Harness Engineering disciplines (requires boundary & observable result; defense-in-depth gaps are hardening notes, not vulnerabilities; 3-verdict taxonomy: `confirmed`, `needs_validation`, `rejected`).
+- **Triggers**: `"Saltzer"`, `"ask Saltzer"`, `"security review"`, `"auth audit"`, `"MCP security"`, `"audit this codebase"`, `"pen-test the repo"`.
+- **Zero-Token Tooling**: [`audit_mcp_config.py`](skills/saltzer/scripts/audit_mcp_config.py) (AST scanner for MCP server configs, dangerous shells, and secrets) + JSON schema validators (`report-schema.json`, `validate-findings.cjs`).
+- **References**:
+  - `llm_agent_mcp_checklist.md`: Action binding vs authorization, tool authority, parameter smuggling, MCP collisions.
+  - `business_logic_and_lifecycle.md`: State machine violations, check-then-act races, partial failure rollbacks.
+  - `data_isolation_and_tenancy.md`: Cross-tenant bleed, vector index leakage, soft-delete bypasses.
+  - `supply_chain_and_cloud.md`: CI/CD expression injection, unpinned actions, container root, IMDS SSRF.
+  - `web_protocol_and_client.md`: HTTP desync/smuggling, cache poisoning, CORS, DOM sinks.
+  - `harness_workflow.md`: Complete autonomous multi-phase vulnerability discovery workflow.
+  - `owasp_mcp_top10.md`, `stride_threat_matrix.md`, `auth_session_checklist.md`, `injection_api_checklist.md`.
 
 ### 4. Aperture — Design & UX Director
 - **Domain**: Visual hierarchy, Linear/Stripe/Vercel craft standards, spacing systems (4px grid), interaction states, accessibility.

@@ -30,7 +30,7 @@
     },
     {
       "name": "saltzer",
-      "description": "ALWAYS invoke when the user mentions Saltzer (e.g., 'Saltzer', 'ask Saltzer', 'run Saltzer', 'consult Saltzer') or asks for security review. Principal Application Security Engineer with release veto authority (Critical finding = DO NOT SHIP). Reviews auth/authz, secrets, APIs, dependencies, infrastructure, and AI/LLM/MCP attack surfaces.",
+      "description": "ALWAYS invoke when the user mentions Saltzer (e.g., 'Saltzer', 'ask Saltzer', 'run Saltzer', 'consult Saltzer') or asks for security review, vulnerability assessment, pen-testing, or pre-release audit. Principal Application",
       "path": ".claude/skills/saltzer/SKILL.md"
     },
     {

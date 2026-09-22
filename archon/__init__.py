@@ -3,7 +3,7 @@ Archon: Universal Expert Skill Suite, Epistemic Rigor & Dual-Scope Memory Engine
 Zero external dependencies. Runs across all major AI coding agents.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "Archon Contributors"
 __license__ = "Apache-2.0"
 
