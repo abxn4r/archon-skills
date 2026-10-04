@@ -9,6 +9,8 @@ jobs:
   build-and-publish:
     name: Build Wheel & Validate Package
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -30,3 +32,9 @@ jobs:
           python -m pip install dist/*.whl
           archon --help
           archon detect
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
