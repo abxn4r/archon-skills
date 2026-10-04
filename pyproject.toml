@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "archon-skills"
-version = "0.2.0"
+version = "0.3.0"
 description = "Universal Expert Skill Suite, Epistemic Rigor & Dual-Scope Memory Engine across AI Coding Agents"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -54,3 +54,8 @@ archon = "archon.cli:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["archon*", "adapters*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+

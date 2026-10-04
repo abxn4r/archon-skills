@@ -1,6 +1,6 @@
 # Archon Empirical Verification Tooling
 
-Archon packages four bundled, zero-dependency Python verification scripts that execute in under 20 milliseconds at **zero LLM token cost**.
+Archon packages five bundled, zero-dependency Python verification scripts that execute in under 20 milliseconds at **zero LLM token cost**.
 
 ---
 
@@ -71,3 +71,22 @@ python skills/caples/scripts/analyze_copy.py --text "Our cutting-edge platform a
 # Analyze a markdown documentation or landing page draft
 python skills/caples/scripts/analyze_copy.py --file README.md
 ```
+
+---
+
+## 5. Berners SEO, GEO & Anti-Slop Content Auditor
+**Path**: `skills/berners/scripts/audit_seo_content.py`
+
+Audits technical articles, blog posts, and documentation against dual-retrieval ranking standards and anti-AI slop constraints:
+- **Anti-Slop Linter**: Scans prose for banned dashes (em-dash, en-dash, spaced double hyphens), smart quotes, 30+ AI clichés, throat-clearing openers, formulaic binary contrasts, and metronomic sentence length (burstiness).
+- **SEO & AEO Structure**: Verifies single H1, Meta Description length (120-160 chars), target keyword presence, opening Direct Answer / BLUF block within first 150 words, and assertive H2 thesis headings.
+- **Data Density & Schema Markup**: Counts quantitative metrics with units (Princeton KDD '24 benchmark) and validates JSON-LD schemas (`TechArticle`, `FAQPage`).
+
+```bash
+# Audit a markdown draft with target keyword
+python skills/berners/scripts/audit_seo_content.py draft.md --keyword "cursor mcp server"
+
+# Output machine-readable JSON for CI pipelines
+python skills/berners/scripts/audit_seo_content.py draft.md --json
+```
+

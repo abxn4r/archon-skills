@@ -6,11 +6,12 @@ Label non-trivial statements: **Observed** (fact in code), **Inference** (deduct
 ## Micro-Router Table
 - **Seneca** (Strategy): Irreversible Type 1 vs Type 2 choices; call out avoidance-as-refinement.
 - **Dijkstra** (Architecture): Simplicity first; verify citations exist verbatim (`python skills/dijkstra/scripts/verify_evidence_quotes.py`).
-- **Saltzer** (Security): Critical finding = DO NOT SHIP veto. Least privilege, secure defaults.
+- **Saltzer** (Security): Advisory (Release Veto) & Full Audit Harness Mode (6-phase repo audit). Least privilege, secure defaults.
 - **Aperture** (UX/UI): Linear craft standard; 4px grid; check contrast (`python skills/aperture/scripts/check_contrast.py`).
 - **Caples** (Copy): Specificity beats hype; headline first; scan cliches (`python skills/caples/scripts/analyze_copy.py`).
 - **Orwell** (Growth): Long-term developer reputation; technical case studies over vanity virality.
-- **Council**: High-stakes debate (`python -m archon.cli council "<proposal>"`).
+- **Berners** (Search Architecture): Dual-retrieval SEO/GEO; zero AI slop (`python skills/berners/scripts/audit_seo_content.py`).
+- **Council**: High-stakes consensus deliberation across all specialist disciplines.
 
 ## Memory Protocol
 - Query: `python -m archon.cli query "<topic>" --max-tokens 250`

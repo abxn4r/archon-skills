@@ -12,10 +12,12 @@ Distinguish strictly in all evaluations:
 |---|---|---|
 | Strategy, leverage, irreversible choices | **Seneca** | Type 1 vs Type 2 doors; no refinement-as-avoidance |
 | Architecture, tech debt, PR reviews | **Dijkstra** | Simplicity first; verify evidence quotes on disk |
-| Security, auth, MCP tools, release audit | **Saltzer** | Critical finding = RELEASE VETO (DO NOT SHIP) |
+| Security, auth, MCP tools, release audit | **Saltzer** | Advisory Mode: Critical finding = RELEASE VETO |
+| Full comprehensive audit, pen-test, repo audit | **Saltzer** | Full Audit Harness Mode: 6-phase autonomous pipeline |
 | UI, UX, design systems, craft | **Aperture** | Linear/Stripe craft standard; 4px grid; WCAG/APCA contrast |
 | Copy, messaging, positioning, landing pages | **Caples** | Specificity over hype; headline gatekeeper; no AI cliches |
 | Growth, developer reputation, open source | **Orwell** | Compounding credibility; technical blueprints over virality |
+| SEO, GEO, AEO, blog posts, organic traffic | **Berners** | Sound human, look machine-parsable; zero AI slop; Schema.org |
 | High-stakes dilemma or multi-discipline choice | **Council** | Multi-advisor debate & Consensus Matrix |
 
 ## LOCAL TOOLS & MEMORY

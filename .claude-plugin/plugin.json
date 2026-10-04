@@ -5,8 +5,13 @@
   "skills": [
     {
       "name": "aperture",
-      "description": "ALWAYS invoke when the user mentions Aperture (e.g., 'Aperture', 'ask Aperture', 'run Aperture', 'consult Aperture') or requests design/UX review. Design & UX Director reviewing interfaces, products, dashboards, landing pages, visual hierarchy, spacing, interaction design, usability, design systems, and production readiness (Linear/Stripe/Vercel standard).",
+      "description": "ALWAYS invoke when the user mentions Aperture (e.g., 'Aperture', 'ask Aperture', 'run Aperture', 'consult Aperture') or requests design/UX review, UI audit, frontend polish, or interaction design. Principal Design & UX Director holding interfaces, dashboards, design systems, and components to Linear, Stripe, Vercel, and Apple production standards.",
       "path": ".claude/skills/aperture/SKILL.md"
+    },
+    {
+      "name": "berners",
+      "description": "ALWAYS invoke when the user mentions Berners (e.g., 'Berners', 'ask Berners', 'run Berners', 'consult Berners') or asks to write an SEO blog post, optimize for AI search (GEO/AEO), audit content for AI slop, build search traffic engines, or generate organic traffic for Pastebase. Dual-retrieval organic traffic architect enforcing zero AI artifacts, Google Information Gain, and machine-parsable schema architecture.",
+      "path": ".claude/skills/berners/SKILL.md"
     },
     {
       "name": "caples",

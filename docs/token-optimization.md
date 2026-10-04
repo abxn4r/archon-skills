@@ -38,10 +38,12 @@ Rather than injecting full expert skill definitions into every conversation turn
 |---|---|---|
 | Strategy, high-stakes decisions | Seneca | Type 1 vs Type 2 doors; no refinement-as-avoidance |
 | Architecture, codebase review | Dijkstra | Simplicity first; verify evidence quotes on disk |
-| Security, auth, release gates | Saltzer | Critical finding = RELEASE VETO (DO NOT SHIP) |
+| Security, auth, release gates | Saltzer | Advisory Mode: Critical finding = RELEASE VETO |
+| Full comprehensive audit, pen-test | Saltzer | Full Audit Harness Mode: 6-phase autonomous pipeline |
 | UI/UX design, visual hierarchy | Aperture | Linear craft standard; 4px grid; WCAG contrast |
 | Copy, messaging, positioning | Caples | Specificity over hype; scan cliches |
 | Growth, reputation, open source | Orwell | Compounding credibility; technical blueprints |
+| SEO, GEO, dual-retrieval blog posts | Berners | Sound human, look machine-parsable; zero AI slop |
 | Multi-discipline dilemma | Council | Multi-advisor debate & Consensus Matrix |
 ```
 
@@ -59,6 +61,9 @@ Exhaustive reference material, templates, and threat models are partitioned into
 - `skills/saltzer/references/injection_api_checklist.md`
 - `skills/saltzer/references/llm_agent_mcp_checklist.md`
 - `skills/aperture/references/linear_craft_standards.md`
+- `skills/berners/references/seo_geo_playbook.md`
+- `skills/berners/references/anti_ai_voice_guide.md`
+- `skills/berners/references/pastebase_content_engine.md`
 
 ---
 
@@ -66,11 +71,13 @@ Exhaustive reference material, templates, and threat models are partitioned into
 
 LLMs struggle with precise string verification, color luminance calculations, and reading-level formulas—and consume hundreds of output tokens attempting them.
 
-Archon delegates these tasks to four bundled zero-dependency Python tools:
+Archon delegates these tasks to five bundled zero-dependency Python tools:
 1. `verify_evidence_quotes.py`: Substring citation verifier (<10ms, 0 tokens).
 2. `audit_mcp_config.py`: MCP configuration security scanner (<15ms, 0 tokens).
 3. `check_contrast.py`: WCAG 2.1/2.2 and APCA contrast calculator (<5ms, 0 tokens).
 4. `analyze_copy.py`: Flesch-Kincaid & 16 AI cliché linter (<12ms, 0 tokens).
+5. `audit_seo_content.py`: Anti-slop, AEO passage indexing, and JSON-LD schema validator (<15ms, 0 tokens).
+
 
 ---
 

@@ -58,12 +58,12 @@ Archon models six distinct engineering and executive disciplines that operate wi
 │     Seneca      │ │   Dijkstra    │ │    Saltzer    │ │    Aperture    │ │    Caples    │
 │    Strategy     │ │ Architecture  │ │Security (VETO)│ │   Design/UX    │ │Copy/Messaging│
 └─────────────────┘ └───────────────┘ └───────────────┘ └────────────────┘ └──────────────┘
-                                              │
-                                              ▼
-                                     ┌────────────────┐
-                                     │     Orwell     │
-                                     │Growth & Playbook│
-                                     └────────────────┘
+                         │                                       │
+                         ▼                                       ▼
+                ┌────────────────┐                      ┌────────────────┐
+                │     Orwell     │                      │    Berners     │
+                │Growth & Playbook│                      │SEO / GEO Engine│
+                └────────────────┘                      └────────────────┘
 ```
 
 - **Seneca (Strategy & Second Brain)**: Reversibility (Type 1 vs Type 2), opportunity cost, cognitive bias detection (refinement as avoidance).
@@ -72,4 +72,5 @@ Archon models six distinct engineering and executive disciplines that operate wi
 - **Aperture (Design & UX Director)**: 4px/8px spatial grid, typography scale, monochromatic discipline, WCAG/APCA contrast math.
 - **Caples (Copy & Messaging Director)**: Customer awareness calibration, positioning framework, headline gatekeeper, 16 AI cliché detectors.
 - **Orwell (Growth & Content Director)**: 2026 platform algorithms (X, LinkedIn, Reddit, HN), compounding reputation, 8-node relational playbook.
+- **Berners (Search Architecture & Traffic Engine)**: Dual-retrieval SEO/GEO/AEO, zero AI slop, Google Information Gain, Schema.org structured data, and Pastebase acquisition.
 - **Consensus Council**: Autonomous multi-advisor debate mode producing a structured Consensus & Disagreements Matrix for high-stakes proposals.

@@ -48,15 +48,17 @@ class AntigravityAdapter(BaseAdapter):
         router_file = target_root / "ARCHON_ROUTER.md"
         router_content = (
             "# ARCHON MICRO-ROUTER FOR ANTIGRAVITY\n\n"
-            "| Situation / Domain | Advisor | Skill Path |\n"
-            "|---|---|---|\n"
-            "| Strategic dilemma, high-stakes choice, accountability | Seneca | `.agents/skills/seneca/SKILL.md` |\n"
-            "| Codebase review, architecture, refactoring, PR | Dijkstra | `.agents/skills/dijkstra/SKILL.md` |\n"
-            "| Security review, auth, API security, release gate | Saltzer | `.agents/skills/saltzer/SKILL.md` |\n"
-            "| UI/UX design, visual hierarchy, contrast, design systems | Aperture | `.agents/skills/aperture/SKILL.md` |\n"
-            "| Landing page copy, headlines, messaging, positioning | Caples | `.agents/skills/caples/SKILL.md` |\n"
-            "| Growth, developer reputation, technical articles, posts | Orwell | `.agents/skills/orwell/SKILL.md` |\n"
-            "| Autonomous debate across all 6 disciplines | Council | `.agents/skills/council/SKILL.md` |\n"
+            "| Situation / Domain | Advisor | Skill Path | Mode / Directive |\n"
+            "|---|---|---|---|\n"
+            "| Strategic dilemma, high-stakes choice, accountability | Seneca | `.agents/skills/seneca/SKILL.md` | Type 1 vs Type 2 choices |\n"
+            "| Codebase review, architecture, refactoring, PR | Dijkstra | `.agents/skills/dijkstra/SKILL.md` | Structural simplicity & fitness |\n"
+            "| Security review, auth, API security, release gate | Saltzer | `.agents/skills/saltzer/SKILL.md` | Advisory Mode (Release Veto) |\n"
+            "| Full comprehensive audit, pen-test, repo vulnerability hunt | Saltzer | `.agents/skills/saltzer/SKILL.md` | Full Audit Harness Mode (6-Phase) |\n"
+            "| UI/UX design, visual hierarchy, contrast, design systems | Aperture | `.agents/skills/aperture/SKILL.md` | Linear/Stripe craft standard |\n"
+            "| Landing page copy, headlines, messaging, positioning | Caples | `.agents/skills/caples/SKILL.md` | Specificity over hype |\n"
+            "| Growth, developer reputation, technical articles, posts | Orwell | `.agents/skills/orwell/SKILL.md` | Compounding developer credibility |\n"
+            "| SEO, GEO, AEO, dual-retrieval blog posts, Pastebase | Berners | `.agents/skills/berners/SKILL.md` | Sound human, look machine-parsable |\n"
+            "| Autonomous debate across all 6 disciplines | Council | `.agents/skills/council/SKILL.md` | Consensus & Disagreements Matrix |\n"
         )
         atomic_write(router_file, router_content)
         generated.append(router_file)

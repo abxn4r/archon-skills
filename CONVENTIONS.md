@@ -15,3 +15,4 @@
 - MCP Security: `python skills/saltzer/scripts/audit_mcp_config.py`
 - Contrast Checker: `python skills/aperture/scripts/check_contrast.py`
 - Copy Linter: `python skills/caples/scripts/analyze_copy.py`
+- SEO / Content Linter: `python skills/berners/scripts/audit_seo_content.py`

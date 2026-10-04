@@ -134,7 +134,7 @@ def render_dashboard_content(filter_advisor: Optional[str] = None) -> str:
 
     # Bottom border
     lines.append(f"{CYAN}└{'─' * (width - 2)}┘{RESET}")
-    lines.append(f"{DIM}Commands: [q] Quit  [r] Refresh  [1-6] Filter Advisor  [c] Council{RESET}")
+    lines.append(f"{DIM}Commands: [q] Quit  [r] Refresh  [1-7] Filter Advisor  [c] Council{RESET}")
     return "\n".join(lines)
 
 
@@ -190,6 +190,8 @@ def run_dashboard(interactive: Optional[bool] = None) -> None:
                 filter_adv = "caples"
             elif ch == "6":
                 filter_adv = "orwell"
+            elif ch == "7":
+                filter_adv = "berners"
             elif ch == "0":
                 filter_adv = None
     except KeyboardInterrupt:

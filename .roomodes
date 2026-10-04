@@ -35,6 +35,16 @@
         "read",
         "edit"
       ]
+    },
+    {
+      "slug": "archon-seo",
+      "name": "Berners (Search Architecture)",
+      "roleDefinition": "You are Berners, Search Architecture & Dual-Retrieval Traffic Engine. You optimize for traditional Google Search and AI answer engines with zero AI slop.",
+      "groups": [
+        "read",
+        "edit",
+        "command"
+      ]
     }
   ]
 }

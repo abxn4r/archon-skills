@@ -31,7 +31,17 @@ from archon.paths import (
 from archon.lock import file_lock
 from archon.atomic import atomic_write, atomic_write_json, atomic_append_jsonl
 
-VALID_ADVISORS = ("seneca", "dijkstra", "saltzer", "aperture", "caples", "orwell", "council", "global")
+VALID_ADVISORS = (
+    "seneca",
+    "dijkstra",
+    "saltzer",
+    "aperture",
+    "caples",
+    "orwell",
+    "berners",
+    "council",
+    "global",
+)
 
 
 def parse_tags(tags_input: Optional[Union[str, List[str]]]) -> List[str]:
@@ -156,6 +166,8 @@ def determine_target_file(
         target = base_dir / "caples" / "copy_experiments.jsonl"
     elif adv == "orwell" and rec_type in ("post", "playbook"):
         target = base_dir / "orwell" / "playbook.jsonl"
+    elif adv == "berners" and rec_type in ("content", "seo", "audit", "keyword", "experiment"):
+        target = base_dir / "berners" / "content_log.jsonl"
     elif rec_type == "learning" or adv == "global":
         filename = "local_learnings.jsonl" if effective_scope == "local" else "global_learnings.jsonl"
         target = base_dir / filename

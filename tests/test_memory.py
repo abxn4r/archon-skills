@@ -115,6 +115,33 @@ class TestMemory(unittest.TestCase):
         self.assertGreaterEqual(st["total_records"], 1)
         self.assertIn("orwell", st["advisors"])
 
+    def test_berners_memory_integration(self):
+        """Verify Berners is in VALID_ADVISORS, has scope directory, and records content log."""
+        from archon.memory import VALID_ADVISORS
+        self.assertIn("berners", VALID_ADVISORS)
+
+        # Check directory was created by setUp's init_scopes
+        berners_dir = self.repo_root / ".archon" / "berners"
+        self.assertTrue(berners_dir.is_dir())
+
+        # Record a content audit / SEO entry
+        rec = record(
+            advisor="berners",
+            record_type="content",
+            data={"title": "Cursor MCP Server Guide", "score": 92, "status": "published"},
+            tags=["seo", "mcp", "pastebase"],
+            scope="local",
+            repo_root=self.repo_root,
+        )
+        self.assertEqual(rec["advisor"], "berners")
+        self.assertTrue((berners_dir / "content_log.jsonl").exists())
+
+        # Query memory for the entry
+        res = query("Cursor MCP Server", advisor="berners", scope="local", repo_root=self.repo_root)
+        self.assertGreaterEqual(len(res), 1)
+        self.assertEqual(res[0]["entry"]["data"]["title"], "Cursor MCP Server Guide")
+
 
 if __name__ == "__main__":
     unittest.main()
+

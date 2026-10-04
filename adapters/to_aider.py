@@ -31,6 +31,7 @@ class AiderAdapter(BaseAdapter):
             "- MCP Security: `python skills/saltzer/scripts/audit_mcp_config.py`\n"
             "- Contrast Checker: `python skills/aperture/scripts/check_contrast.py`\n"
             "- Copy Linter: `python skills/caples/scripts/analyze_copy.py`\n"
+            "- SEO / Content Linter: `python skills/berners/scripts/audit_seo_content.py`\n"
         )
         conventions_file = self.output_dir / "CONVENTIONS.md"
         atomic_write(conventions_file, conventions_content)

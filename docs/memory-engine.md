@@ -24,6 +24,7 @@ Archon solves AI agent amnesia while preventing private founder reflections, str
 - **Architectural Decision Records (MADRs)**: Default to repository scope `.archon/dijkstra/reviews.jsonl`.
 - **Tracked Security Debt**: Default to repository scope `.archon/saltzer/security_debt.jsonl`.
 - **Copy Experiments**: Default to repository scope `.archon/caples/copy_experiments.jsonl`.
+- **SEO / Content Experiments (Berners)**: Default to repository scope `.archon/berners/content_log.jsonl`.
 - **Validated Learnings**: Automatically routed to local or global scope based on context or `--scope` flag.
 
 ---

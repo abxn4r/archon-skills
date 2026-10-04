@@ -23,9 +23,11 @@ class TestAdapters(unittest.TestCase):
     def test_cursor_export(self):
         """Verify Cursor .cursor/rules/*.mdc generation with alwaysApply: false."""
         files = run_export("cursor", self.skills_dir, self.out_dir)
-        self.assertGreaterEqual(len(files), 6)
+        self.assertGreaterEqual(len(files), 8)
         saltzer_mdc = self.out_dir / ".cursor" / "rules" / "saltzer.mdc"
+        berners_mdc = self.out_dir / ".cursor" / "rules" / "berners.mdc"
         self.assertTrue(saltzer_mdc.exists())
+        self.assertTrue(berners_mdc.exists())
         content = saltzer_mdc.read_text(encoding="utf-8")
         self.assertIn("alwaysApply: false", content)
         self.assertIn("globs:", content)
@@ -33,11 +35,13 @@ class TestAdapters(unittest.TestCase):
     def test_claude_code_export(self):
         """Verify Claude Code .claude/skills/ and plugin.json generation."""
         files = run_export("claude_code", self.skills_dir, self.out_dir)
-        self.assertGreaterEqual(len(files), 6)
+        self.assertGreaterEqual(len(files), 8)
         plugin_file = self.out_dir / ".claude-plugin" / "plugin.json"
         self.assertTrue(plugin_file.exists())
         skill_file = self.out_dir / ".claude" / "skills" / "dijkstra" / "SKILL.md"
+        berners_file = self.out_dir / ".claude" / "skills" / "berners" / "SKILL.md"
         self.assertTrue(skill_file.exists())
+        self.assertTrue(berners_file.exists())
 
     def test_windsurf_export(self):
         """Verify Windsurf .windsurfrules and workflow generation."""
@@ -71,6 +75,7 @@ class TestAdapters(unittest.TestCase):
         """Verify Antigravity .agents/skills/ export."""
         files = run_export("antigravity", self.skills_dir, self.out_dir)
         self.assertTrue((self.out_dir / ".agents" / "skills" / "ARCHON_ROUTER.md").exists())
+        self.assertTrue((self.out_dir / ".agents" / "skills" / "berners" / "SKILL.md").exists())
 
     def test_export_all(self):
         """Verify full export targeting all agents."""

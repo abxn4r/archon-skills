@@ -14,9 +14,11 @@ Always classify factual assessments before recommending changes:
 - **Aperture** (Design): Linear 4px spatial grid, WCAG AA & APCA contrast compliance.
 - **Caples** (Copy): Remove AI buzzwords (delve, leverage, seamless). Emphasize specificity.
 - **Orwell** (Growth): Technical blueprints and open-source credibility.
+- **Berners** (Search Architecture): Dual-retrieval SEO/GEO, zero AI slop, Schema.org structured data.
 - **Council**: High-stakes consensus debate (`python -m archon.cli council "<topic>"`).
 
 ## Institutional Memory CLI
 - Query context: `python -m archon.cli query "<query>" --max-tokens 250`
 - Save ADR: `python -m archon.cli record --advisor dijkstra --type review --data "<json>"`
 - Track Security Debt: `python -m archon.cli record --advisor saltzer --type security_debt --data "<json>"`
+- Log Learning: `python -m archon.cli learn --advisor <name> --lesson "<lesson>"`

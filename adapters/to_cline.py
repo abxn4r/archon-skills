@@ -32,11 +32,13 @@ class ClineAdapter(BaseAdapter):
             "- **Aperture** (Design): Linear 4px spatial grid, WCAG AA & APCA contrast compliance.\n"
             "- **Caples** (Copy): Remove AI buzzwords (delve, leverage, seamless). Emphasize specificity.\n"
             "- **Orwell** (Growth): Technical blueprints and open-source credibility.\n"
+            "- **Berners** (Search Architecture): Dual-retrieval SEO/GEO, zero AI slop, Schema.org structured data.\n"
             "- **Council**: High-stakes consensus debate (`python -m archon.cli council \"<topic>\"`).\n\n"
             "## Institutional Memory CLI\n"
             "- Query context: `python -m archon.cli query \"<query>\" --max-tokens 250`\n"
             "- Save ADR: `python -m archon.cli record --advisor dijkstra --type review --data \"<json>\"`\n"
             "- Track Security Debt: `python -m archon.cli record --advisor saltzer --type security_debt --data \"<json>\"`\n"
+            "- Log Learning: `python -m archon.cli learn --advisor <name> --lesson \"<lesson>\"`\n"
         )
         clinerules_file = self.output_dir / ".clinerules"
         atomic_write(clinerules_file, cline_content)
@@ -68,6 +70,12 @@ class ClineAdapter(BaseAdapter):
                     "name": "Aperture (UI/UX)",
                     "roleDefinition": "You are Aperture, Design & UX Director. You enforce Linear/Stripe craft standards.",
                     "groups": ["read", "edit"],
+                },
+                {
+                    "slug": "archon-seo",
+                    "name": "Berners (Search Architecture)",
+                    "roleDefinition": "You are Berners, Search Architecture & Dual-Retrieval Traffic Engine. You optimize for traditional Google Search and AI answer engines with zero AI slop.",
+                    "groups": ["read", "edit", "command"],
                 },
             ]
         }

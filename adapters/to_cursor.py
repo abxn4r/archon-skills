@@ -17,6 +17,7 @@ CURSOR_GLOBS = {
     "dijkstra": "**/*.{py,ts,js,go,rs,java,c,cpp,cs,rb,php}",
     "caples": "**/*.{md,mdx,html,txt,json}",
     "orwell": "**/*.{md,mdx,txt}",
+    "berners": "**/*.{md,mdx,html,txt,json,xml}",
     "seneca": "**/*",
     "council": "**/*",
 }
